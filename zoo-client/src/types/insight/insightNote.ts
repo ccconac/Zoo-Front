@@ -22,6 +22,7 @@ export interface InsightNoteProps {
   isLiked: boolean;
   hasSpeakerComment: boolean;
   profile: ProfileProps;
+  isMine: boolean;
 }
 
 export interface InsightNoteListProps {

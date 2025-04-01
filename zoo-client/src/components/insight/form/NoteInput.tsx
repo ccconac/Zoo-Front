@@ -1,6 +1,6 @@
 'use client';
 import useModalStore from '@/store/common/useModalStore';
-import SettingNoteModal from '@/components/common/modal/SettingNoteModal';
+// import SettingNoteModal from '@/components/common/modal/SettingNoteModal';
 import SaveInsightModal from '@/components/common/modal/SaveInsightModal';
 import { useRef, useState } from 'react';
 import { useSaveInsight } from '@/store/common/insight/useSaveInsight';
@@ -11,11 +11,11 @@ export default function NoteInput({ text, id }: { text: string; id: number }) {
   const { content } = useSaveInsight();
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-  const openSettingModal = () => {
-    openModal({
-      contents: <SettingNoteModal />,
-    });
-  };
+  // const openSettingModal = () => {
+  //   openModal({
+  //     contents: <SettingNoteModal />,
+  //   });
+  // };
   const openSaveModal = () => {
     openModal({
       contents: (
@@ -60,8 +60,8 @@ export default function NoteInput({ text, id }: { text: string; id: number }) {
             임시저장
           </button>
           <button
-            type="button"
-            onClick={openSettingModal}
+            type="submit"
+            // onClick={openSettingModal}
             className="cursor-pointer text-text-primary"
           >
             등록

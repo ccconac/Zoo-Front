@@ -58,7 +58,7 @@ function ModalBody({ closeModal }: { closeModal: () => void }) {
       </div>
       <button
         type="submit"
-        onClick={() => setTimeout(() => closeModal(), 0)}
+        // onClick={() => setTimeout(() => closeModal(), 0)}
         className="body-sb-16 flex w-full items-center justify-center rounded-md bg-fill-primary px-6 py-3 text-text-white"
       >
         등록하기

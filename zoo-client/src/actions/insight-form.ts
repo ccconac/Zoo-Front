@@ -34,8 +34,10 @@ export async function createReply(formData: FormData) {
 export async function createNote(formData: FormData) {
   const sessionId = Number(formData.get('sessionId'));
   const memo = formData.get('memo');
-  const isAnonymous = formData.get('isAnonymous') === '익명';
-  const isPublic = formData.get('isPublic') === '공개';
+  const isAnonymous = false;
+  // const isAnonymous = formData.get('isAnonymous') === '익명';
+  // const isPublic = formData.get('isPublic') === '공개';
+  const isPublic = true;
   const isDraft = false;
   const endpoint = `${baseURL}/api/v1/insights`;
   const token =

@@ -2,8 +2,6 @@
 import { NoteInput, ReplyInput } from '@/components';
 import { useMutationNoteForm } from '@/hooks/insights/useInsights';
 import { useMutationReplyForm } from '@/hooks/insights/useReply';
-// import { useGetPresignedUrls, useUploadFilesToS3 } from '@/hook/useFiles';
-// import { useInsightFormStore } from '@/store/common/insight/useInsightForm';
 import useModalStore from '@/store/common/useModalStore';
 
 type inputType = 'reply' | 'insight';

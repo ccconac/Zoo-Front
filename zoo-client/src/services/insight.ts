@@ -72,6 +72,13 @@ export async function getInsightNote(
   });
 }
 
+export async function deleteInsight(id: number) {
+  const endpoint = `/api/v1/insights/${id}`;
+  return fetchApi(endpoint, {
+    method: 'DELETE',
+  });
+}
+
 export async function getInsightDetailed(id: number) {
   const endpoint = `/api/v1/insights/${id}`;
   return fetchApi<InsightDetailedProps>(endpoint, {

@@ -7,12 +7,15 @@ import InsightForm from '../form/InsightForm';
 import ProfileHeader from '../profileHeader';
 import { getTime } from '@/utils/insightDate';
 import { INote } from '@/types/insight/insightNote';
+import DeleteModal from '@/components/common/modal/DeleteModal';
+import useModalStore from '@/store/common/useModalStore';
 
 export default function NoteItem({ children, note }: IChildren & INote) {
   const [replyOn, setReplyOn] = useState(false);
   const [detailedReply, setDetailedReply] = useState(false);
   const [isOverflowing, setIsOverflowing] = useState(false);
   const textRef = useRef<HTMLParagraphElement>(null);
+  const { openModal } = useModalStore();
 
   const {
     id,
@@ -20,11 +23,13 @@ export default function NoteItem({ children, note }: IChildren & INote) {
     createdAt,
     updatedAt,
     likeCount,
+    isPublic,
     isAnonymous,
     isLiked,
     hasSpeakerComment,
     memo,
     profile,
+    isMine,
   } = note;
 
   const time = getTime(createdAt);
@@ -35,16 +40,34 @@ export default function NoteItem({ children, note }: IChildren & INote) {
     }
   }, []);
 
+  const OpenDeleteModal = () => {
+    openModal({
+      contents: profile && <DeleteModal id={id} />,
+    });
+  };
+
   return (
-    <div className={`flex w-full flex-col gap-6 ${isAnonymous && 'hidden'}`}>
+    <div className={`flex w-full flex-col gap-6 ${!isPublic && 'hidden'}`}>
       <div className="flex flex-col gap-2 text-text-sub">
-        <ProfileHeader
-          isAnonymous={isAnonymous}
-          profile={profile}
-          name={displayName}
-          time={time}
-          edited={createdAt == updatedAt ? false : true}
-        />
+        <div className="flex items-center justify-between">
+          <ProfileHeader
+            isAnonymous={isAnonymous}
+            profile={profile}
+            name={displayName}
+            time={time}
+            edited={createdAt == updatedAt ? false : true}
+          />
+          <div className={`${!isMine && 'hidden'}`}>
+            <Image
+              onClick={OpenDeleteModal}
+              width={24}
+              height={24}
+              alt="edit"
+              src="/button/add-btn.svg"
+            />
+          </div>
+        </div>
+
         <div className="flex flex-col gap-1">
           <p
             ref={textRef}

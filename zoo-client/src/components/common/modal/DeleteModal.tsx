@@ -47,7 +47,6 @@ export default function DeleteModal({ id }: { id: number }) {
     '삭제하시면 작성한 인사이트 노트는 복구할 수 없습니다. 그래도 삭제하시겠어요?';
 
   const DeleteHandler = () => {
-    console.log(id, '삭제');
     mutate(id);
   };
 

@@ -102,9 +102,9 @@ export function useMutationDeleteNote() {
 
   return useMutation({
     mutationFn: (id: number) => deleteInsight(id),
-    onSuccess: (_, id) => {
+    onSuccess: () => {
       queryClient.invalidateQueries({
-        queryKey: ['insights', id],
+        queryKey: ['insights'],
       });
       closeModal();
     },

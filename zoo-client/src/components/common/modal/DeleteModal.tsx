@@ -48,6 +48,7 @@ export default function DeleteModal({ id }: { id: number }) {
 
   const DeleteHandler = () => {
     mutate(id);
+    closeModal();
   };
 
   return (

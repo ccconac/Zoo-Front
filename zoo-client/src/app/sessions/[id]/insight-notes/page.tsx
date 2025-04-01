@@ -95,7 +95,7 @@ export default function SessionInsightNotes() {
 
   return (
     <PrivatedRouter>
-      {isOpen && contents}
+      {isOpen && <div className="absolute inset-0 z-50">{contents}</div>}
 
       <main>
         <NavigationBar />

@@ -27,7 +27,7 @@ export default function DateInfoList({ title, items }: DateInfoProps) {
           <div className="flex h-[38px] content-center items-center justify-between">
             <span className="body-m-14 flex-1 text-text-main">{title}</span>
             <Image
-              src="/accordion/dateinfo-arrow.svg"
+              src="/accordion/date-btn.svg"
               alt="DateInfo Toggle Accordion"
               className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : 'rotate-0'}`}
               width={16}

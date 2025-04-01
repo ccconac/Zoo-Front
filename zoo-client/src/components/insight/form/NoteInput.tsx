@@ -60,7 +60,7 @@ export default function NoteInput({ text, id }: { text: string; id: number }) {
             임시저장
           </button>
           <button
-            type="submit"
+            type="button"
             onClick={openSettingModal}
             className="cursor-pointer text-text-primary"
           >

@@ -9,7 +9,7 @@ export default function ReplyList({ id }: { id: number }) {
 
   const { data = [] } = useGetReply(id);
 
-  const ReplyList = [...data].reverse();
+  const ReplyList = [...data];
 
   return (
     <>

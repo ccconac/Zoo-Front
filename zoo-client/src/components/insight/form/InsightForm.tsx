@@ -2,6 +2,8 @@
 import { NoteInput, ReplyInput } from '@/components';
 import { useMutationNoteForm } from '@/hooks/insights/useInsights';
 import { useMutationReplyForm } from '@/hooks/insights/useReply';
+// import { useGetPresignedUrls, useUploadFilesToS3 } from '@/hook/useFiles';
+// import { useInsightFormStore } from '@/store/common/insight/useInsightForm';
 import useModalStore from '@/store/common/useModalStore';
 
 type inputType = 'reply' | 'insight';
@@ -18,7 +20,6 @@ export default function InsightForm({
   const { mutate: mutateReply } = useMutationReplyForm(id);
 
   async function submitNoteForm(formData: FormData) {
-    console.log('노트 작성');
     mutateNote(formData);
   }
   async function submitReplyForm(formData: FormData) {

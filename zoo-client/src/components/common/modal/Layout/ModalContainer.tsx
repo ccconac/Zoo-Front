@@ -1,4 +1,3 @@
-'use client';
 import Overlay from './Overlay';
 import { IModalContainer } from '@/types/modal/modal';
 

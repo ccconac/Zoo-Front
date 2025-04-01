@@ -119,7 +119,7 @@ export default function MyInsights() {
 
   return (
     <>
-      {isOpen && <div className="absolute inset-0 z-50">{contents}</div>}
+      {isOpen && contents}
       <div className="flex flex-col gap-10">
         <div>
           <h1 className="headline-sb-36 leading-normal text-text-main">

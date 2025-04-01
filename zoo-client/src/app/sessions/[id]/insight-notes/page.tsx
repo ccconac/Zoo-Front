@@ -10,7 +10,6 @@ import {
   InsightSideNavigationBar,
   AnotherInsightCard,
 } from '@/components';
-import PrivatedRouter from '@/components/common/privatedRouter';
 import { useGetTopInsightQuery } from '@/hooks/insights/insight';
 import { useGetInsightNote } from '@/hooks/insights/useInsights';
 import { useSession } from '@/hooks/session/useSession';
@@ -94,9 +93,8 @@ export default function SessionInsightNotes() {
   const { isOpen, contents } = useModalStore();
 
   return (
-    <PrivatedRouter>
-      {isOpen && <div className="absolute inset-0 z-50">{contents}</div>}
-
+    <>
+      {isOpen && contents}
       <main>
         <NavigationBar />
         <InsightSideNavigationBar />
@@ -112,6 +110,6 @@ export default function SessionInsightNotes() {
         </div>
         <Footer />
       </main>
-    </PrivatedRouter>
+    </>
   );
 }
